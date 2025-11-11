@@ -1,0 +1,22 @@
+.list {
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+}
+
+.list > :not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.item {
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+}
+
+.item > :not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.text {
+  color: var(--color-text-p);
+  font-size: var(--font-size-p);
+}

@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.5rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-section-bg);
+}
+
+.name {
+  margin-right: 0.5rem;
+  color: var(--color-text-p);
+  font-size: var(--font-size-p);
+}

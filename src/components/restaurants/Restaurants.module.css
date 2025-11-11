@@ -1,0 +1,12 @@
+.container {
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-section-bg);
+}
+
+.title {
+  margin-bottom: 1rem;
+  color: var(--color-text-heading);
+  text-align: center;
+  font-size: var(--font-size-h2);
+}

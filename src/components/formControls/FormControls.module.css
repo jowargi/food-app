@@ -1,0 +1,7 @@
+.container {
+  padding: 0.5rem;
+}
+
+.container > :not(:last-child) {
+  margin-right: 1%;
+}

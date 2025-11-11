@@ -1,0 +1,33 @@
+:root {
+  /* Цвета фона */
+  --color-main-bg: #f5f7f9;
+  --color-section-bg: #ffffff;
+
+  /* Цвета текста */
+  --color-text-heading: #2d3748;
+  --color-text-p: #4a5568;
+
+  /* Цвета кнопок */
+  --color-button-bg: #edf2f7;
+  --color-button-text: #2d3748;
+  --color-button-border: #cbd5e0;
+  --color-button-disabled-bg: #e2e8f0;
+  --color-button-disabled-text: #a0aec0;
+  --color-button-disabled-border: #e2e8f0;
+
+  /* Прочие цвета */
+  --color-border: #e2e8f0;
+  --color-spinner: #718096;
+  --color-scroll-progress: #4a5568;
+  --color-star: #a0aec0;
+
+  /* Размеры шрифтов */
+  --font-size-h1: 2rem;
+  --font-size-h2: 1.75rem;
+  --font-size-h3: 1.5rem;
+  --font-size-h4: 1.25rem;
+  --font-size-h5: 1.125rem;
+  --font-size-p: 1rem;
+  --font-size-button: 1rem;
+  --font-size-star: 1.25rem;
+}

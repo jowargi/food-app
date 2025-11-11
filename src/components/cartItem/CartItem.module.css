@@ -1,0 +1,9 @@
+.title {
+  color: var(--color-text-heading);
+  font-size: var(--font-size-h3);
+}
+
+.text {
+  color: var(--color-text-p);
+  font-size: var(--font-size-p);
+}

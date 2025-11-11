@@ -1,0 +1,35 @@
+.container {
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-section-bg);
+}
+
+.container > :not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  color: var(--color-text-heading);
+  font-size: var(--font-size-h2);
+}
+
+.price {
+  color: var(--color-text-p);
+  font-size: var(--font-size-p);
+}
+
+.ingredients {
+  color: var(--color-text-p);
+  font-size: var(--font-size-p);
+}
+
+.link {
+  display: block;
+  width: fit-content;
+  padding: 0.5rem;
+  border: 1px solid var(--color-button-border);
+  background-color: var(--color-button-bg);
+  color: var(--color-button-text);
+  text-decoration: none;
+  font-size: var(--font-size-button);
+}

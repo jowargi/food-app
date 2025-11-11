@@ -1,0 +1,11 @@
+.item {
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.img {
+  display: block;
+  width: auto;
+  height: 20rem;
+  border-radius: 5px;
+}

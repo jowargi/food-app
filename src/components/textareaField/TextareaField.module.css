@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.label {
+  margin-bottom: 0.5rem;
+  color: var(--color-text-p);
+  font-size: var(--font-size-p);
+}
+
+.textarea {
+  resize: none;
+  width: 40%;
+  height: 5rem;
+  padding: 0.5rem;
+  outline: none;
+}

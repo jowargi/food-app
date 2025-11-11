@@ -1,0 +1,11 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  margin-top: 1rem;
+}
+
+.form > :not(:last-child) {
+  margin-bottom: 1rem;
+}

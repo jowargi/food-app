@@ -1,0 +1,9 @@
+.list {
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  margin-bottom: 1rem;
+}

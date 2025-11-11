@@ -1,0 +1,14 @@
+.button {
+  padding: 0.5rem;
+  border: 1px solid var(--color-button-border);
+  background-color: var(--color-button-bg);
+  color: var(--color-button-text);
+  font-size: var(--font-size-button);
+  line-height: 1;
+}
+
+.button--disabled {
+  border-color: var(--color-button-disabled-border);
+  background-color: var(--color-button-disabled-bg);
+  color: var(--color-button-disabled-text);
+}

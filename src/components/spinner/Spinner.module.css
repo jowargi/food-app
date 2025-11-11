@@ -1,0 +1,33 @@
+.spinner-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner-inner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  animation: spinner 1s linear infinite;
+}
+
+.spinner-inner--theme-color-light {
+  border-left-color: var(--color-spinner);
+  border-top-color: var(--color-spinner);
+}
+
+.spinner-inner--theme-color-dark {
+  border-left-color: var(--color-spinner);
+  border-top-color: var(--color-spinner);
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

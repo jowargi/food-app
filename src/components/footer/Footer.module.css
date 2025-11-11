@@ -1,0 +1,18 @@
+.footer {
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  margin: 1rem;
+  background-color: var(--color-main-bg);
+}
+
+.copyright {
+  color: var(--color-text-p);
+  text-align: center;
+  font-size: var(--font-size-p);
+}
+
+.address {
+  color: var(--color-text-p);
+  text-align: center;
+  font-size: var(--font-size-p);
+}

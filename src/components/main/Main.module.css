@@ -1,0 +1,7 @@
+.main {
+  min-height: 100vh;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  margin: 0 1rem;
+  background-color: var(--color-main-bg);
+}
