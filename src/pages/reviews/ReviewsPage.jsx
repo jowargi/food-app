@@ -3,7 +3,6 @@ import { useGetReviewsByRestaurantIdQuery } from "../../redux/api/reviews/api";
 import ErrorFallback from "../../components/errorFallback/ErrorFallback";
 import ReviewsContainer from "../../components/reviews/ReviewsContainer";
 import styles from "./ReviewsPage.module.css";
-import classNames from "classnames";
 
 export default function ReviewsPage() {
   const { restaurantId } = useParams();
@@ -17,8 +16,8 @@ export default function ReviewsPage() {
     return <ErrorFallback name={error.status} message={error.error} />;
 
   return (
-    <div className={classNames(styles.container)}>
-      <h4 className={classNames(styles.title)}>Reviews</h4>
+    <div className={styles.container}>
+      <h4 className={styles.title}>Reviews</h4>
       <ReviewsContainer />
     </div>
   );

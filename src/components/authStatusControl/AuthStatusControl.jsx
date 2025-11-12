@@ -9,7 +9,6 @@ import { userMock } from "../../constants/userMock";
 import { useThrottle } from "../../hooks/useThrottle";
 import Button from "../button/Button";
 import styles from "./AuthStatusControl.module.css";
-import classNames from "classnames";
 
 const AuthStatusContext = createContext({
   authorizedUserId: null,
@@ -35,7 +34,7 @@ AuthStatusControlCompound.UserName = function UserName() {
   );
 
   return (
-    <p className={classNames(styles.name)}>
+    <p className={styles.name}>
       {authorizedUser ? authorizedUser.name : "Guest"}
     </p>
   );
@@ -74,7 +73,7 @@ AuthStatusControlCompound.AuthButton = function AuthButton() {
 const AuthStatusControl = () => {
   return (
     <AuthStatusControlCompound>
-      <div className={classNames(styles.container)}>
+      <div className={styles.container}>
         <AuthStatusControlCompound.UserName />
         <AuthStatusControlCompound.AuthButton />
       </div>

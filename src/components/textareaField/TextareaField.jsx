@@ -1,5 +1,4 @@
 import styles from "./TextareaField.module.css";
-import classNames from "classnames";
 
 export default function TextareaField({
   id,
@@ -9,8 +8,8 @@ export default function TextareaField({
   labelText,
 }) {
   return (
-    <div className={classNames(styles.container)}>
-      <label htmlFor={id} className={classNames(styles.label)}>
+    <div className={styles.container}>
+      <label htmlFor={id} className={styles.label}>
         {labelText}
       </label>
       <textarea
@@ -18,7 +17,7 @@ export default function TextareaField({
         name={name}
         value={value}
         onChange={onChange}
-        className={classNames(styles.textarea)}
+        className={styles.textarea}
       />
     </div>
   );
