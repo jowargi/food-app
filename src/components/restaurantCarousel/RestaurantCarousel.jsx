@@ -1,13 +1,12 @@
 import { useImageURLs } from "../../hooks/useImageURLs";
 import RestaurantCarouselListItem from "../restaurantCarouselListItem/RestaurantCarouselListItem";
 import styles from "./RestaurantCarousel.module.css";
-import classNames from "classnames";
 
 export default function RestaurantCarousel({ restaurantsWithImage }) {
   const restaurantsWithImageUrl = useImageURLs(restaurantsWithImage);
 
   return (
-    <ul className={classNames(styles.list)}>
+    <ul className={styles.list}>
       {restaurantsWithImageUrl.map((restaurant) => {
         const {
           id: restaurantId,

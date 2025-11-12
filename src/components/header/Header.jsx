@@ -10,7 +10,7 @@ export default function Header() {
     <header className={classNames(styles.header, "clearfix")}>
       <h1
         onPointerDown={(event) => event.preventDefault()}
-        className={classNames(styles.title)}
+        className={styles.title}
       >
         Food App
       </h1>

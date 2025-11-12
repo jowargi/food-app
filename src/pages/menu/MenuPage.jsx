@@ -3,7 +3,6 @@ import { useGetDishesByRestaurantIdQuery } from "../../redux/api/dishes/api";
 import ErrorFallback from "../../components/errorFallback/ErrorFallback";
 import DishesContainer from "../../components/dishes/DishesContainer";
 import styles from "./MenuPage.module.css";
-import classNames from "classnames";
 
 export default function MenuPage() {
   const { restaurantId } = useParams();
@@ -17,8 +16,8 @@ export default function MenuPage() {
     return <ErrorFallback name={error.status} message={error.error} />;
 
   return (
-    <div className={classNames(styles.container)}>
-      <h4 className={classNames(styles.title)}>Menu</h4>
+    <div className={styles.container}>
+      <h4 className={styles.title}>Menu</h4>
       <DishesContainer />
     </div>
   );

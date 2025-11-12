@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef } from "react";
 import styles from "./useTooltip.module.css";
-import classNames from "classnames";
 
 export const useTooltip = (content) => {
   const tooltipRef = useRef(null);
@@ -15,7 +14,7 @@ export const useTooltip = (content) => {
       tooltipRef.current = document.createElement("div");
 
       tooltipRef.current.innerHTML = content;
-      tooltipRef.current.className = classNames(styles.tooltip);
+      tooltipRef.current.className = styles.tooltip;
 
       targetRef.current = target;
 

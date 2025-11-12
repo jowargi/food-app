@@ -1,6 +1,5 @@
 import Counter from "../counter/Counter";
 import styles from "./RatingCounter.module.css";
-import classNames from "classnames";
 
 export default function RatingCounter({
   rating,
@@ -8,10 +7,8 @@ export default function RatingCounter({
   decrementRating,
 }) {
   return (
-    <div className={classNames(styles.container)}>
-      <p className={classNames(styles.text)}>
-        Your current rating for the restaurant:
-      </p>
+    <div className={styles.container}>
+      <p className={styles.text}>Your current rating for the restaurant:</p>
       <Counter
         count={rating}
         increment={incrementRating}

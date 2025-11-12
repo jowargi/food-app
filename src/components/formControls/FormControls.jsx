@@ -1,10 +1,9 @@
 import Button from "../button/Button";
 import styles from "./FormControls.module.css";
-import classNames from "classnames";
 
 export default function FormControls({ onClear, isDisabled }) {
   return (
-    <div className={classNames(styles.container)}>
+    <div className={styles.container}>
       <Button onClick={onClear} isDisabled={isDisabled}>
         Clear
       </Button>
