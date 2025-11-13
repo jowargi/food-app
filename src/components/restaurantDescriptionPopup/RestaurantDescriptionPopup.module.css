@@ -1,0 +1,11 @@
+.popup {
+  position: absolute;
+  z-index: 1000;
+  padding: 0.5rem;
+  border: 1px solid var(--color-button-border);
+  border-radius: 5px;
+  background-color: var(--color-button-bg);
+  color: var(--color-button-text);
+  text-align: center;
+  font-size: var(--font-size-button);
+}

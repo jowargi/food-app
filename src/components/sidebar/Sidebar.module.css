@@ -8,7 +8,7 @@
 }
 
 .container {
-  overflow: auto;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   width: 100%;
