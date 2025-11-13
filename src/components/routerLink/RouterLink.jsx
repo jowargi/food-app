@@ -2,7 +2,14 @@ import { NavLink } from "react-router-dom";
 import styles from "./RouterLink.module.css";
 import classNames from "classnames";
 
-export default function RouterLink({ children, to, style }) {
+export default function RouterLink({
+  children,
+  to,
+  ref,
+  onPointerCancel,
+  onClick,
+  style,
+}) {
   return (
     <NavLink
       to={to}
@@ -10,6 +17,9 @@ export default function RouterLink({ children, to, style }) {
         classNames(styles.link, { [styles["link--active"]]: isActive })
       }
       style={style}
+      ref={ref}
+      onPointerCancel={onPointerCancel}
+      onClick={onClick}
     >
       {children}
     </NavLink>
