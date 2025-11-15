@@ -30,4 +30,16 @@
   --font-size-p: 1rem;
   --font-size-button: 1rem;
   --font-size-star: 1.25rem;
+
+  /* Tooltip */
+  --color-tooltip-bg: #edf2f7;
+  --color-tooltip-text: #2d3748;
+  --color-tooltip-border: #cbd5e0;
+  --font-size-tooltip: 0.875rem;
+
+  /* Popup */
+  --color-popup-bg: #edf2f7;
+  --color-popup-text: #2d3748;
+  --color-popup-border: #cbd5e0;
+  --font-size-popup: 1rem;
 }
