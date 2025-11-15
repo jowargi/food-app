@@ -2,12 +2,12 @@
   position: absolute;
   z-index: 1000;
   padding: 0.5rem;
-  border: 1px solid var(--color-button-border);
+  border: 1px solid var(--color-tooltip-border);
   border-radius: 5px;
-  background-color: var(--color-button-bg);
-  color: var(--color-button-text);
+  background-color: var(--color-tooltip-bg);
+  color: var(--color-tooltip-text);
   white-space: nowrap;
-  font-size: var(--font-size-button);
+  font-size: var(--font-size-tooltip);
 }
 
 .target {
