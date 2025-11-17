@@ -13,13 +13,13 @@
 }
 
 .spinner-inner--theme-color-light {
-  border-left-color: var(--color-spinner);
-  border-top-color: var(--color-spinner);
+  border-left-color: var(--color-light-spinner);
+  border-top-color: var(--color-light-spinner);
 }
 
 .spinner-inner--theme-color-dark {
-  border-left-color: var(--color-spinner);
-  border-top-color: var(--color-spinner);
+  border-left-color: var(--color-dark-spinner);
+  border-top-color: var(--color-dark-spinner);
 }
 
 @keyframes spinner {

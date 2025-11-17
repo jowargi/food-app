@@ -1,7 +1,9 @@
 import FormControls from "../formControls/FormControls";
 import RatingCounter from "../ratingCounter/RatingCounter";
 import TextareaField from "../textareaField/TextareaField";
+import { useThemeColorContext } from "../themeColorContextProvider/ThemeColorContextProvider";
 import styles from "./ReviewForm.module.css";
+import classNames from "classnames";
 
 export default function ReviewForm({
   formState,
@@ -12,8 +14,13 @@ export default function ReviewForm({
   onClear,
   isDisabled,
 }) {
+  const { themeColor } = useThemeColorContext();
+
   return (
-    <form onSubmit={onSubmit} className={styles.form}>
+    <form
+      onSubmit={onSubmit}
+      className={classNames(styles.form, styles[`form--${themeColor}`])}
+    >
       <TextareaField
         id="review-text"
         name="review"

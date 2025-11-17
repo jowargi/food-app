@@ -9,6 +9,8 @@ import ScrollProgressBar from "../scrollProgressBar/ScrollProgressBar";
 import CartModalContextProvider from "../cartModalContextProvider/CartModalContextProvider";
 import CartModal from "../cartModal/CartModal";
 import CartContainer from "../cart/CartContainer";
+import classNames from "classnames";
+import { useThemeColorContext } from "../themeColorContextProvider/ThemeColorContextProvider";
 
 const SidebarContext = createContext({
   isSidebarVisible: null,
@@ -19,6 +21,8 @@ export const useSidebarContext = () => useContext(SidebarContext);
 
 export default function Layout() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+
+  const { themeColor } = useThemeColorContext();
 
   return (
     <SidebarContext.Provider value={{ isSidebarVisible, setIsSidebarVisible }}>
@@ -43,7 +47,7 @@ export default function Layout() {
           <CartContainer />
         </CartModal>
         <div
-          className={styles.container}
+          className={classNames(styles.layout, styles[`layout--${themeColor}`])}
           style={{ marginLeft: isSidebarVisible ? "20vw" : 0 }}
         >
           <Header />

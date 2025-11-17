@@ -1,12 +1,29 @@
 .container {
   padding: 1rem;
-  border: 1px solid var(--color-border);
-  background-color: var(--color-section-bg);
+  border-width: 1px;
+  border-style: solid;
+}
+
+.container--light {
+  border-color: var(--color-light-border);
+  background-color: var(--color-light-section-bg);
+}
+
+.container--dark {
+  border-color: var(--color-dark-border);
+  background-color: var(--color-dark-section-bg);
 }
 
 .title {
   margin-bottom: 1rem;
-  color: var(--color-text-heading);
   text-align: center;
   font-size: var(--font-size-h2);
+}
+
+.title--light {
+  color: var(--color-light-text-heading);
+}
+
+.title--dark {
+  color: var(--color-dark-text-heading);
 }

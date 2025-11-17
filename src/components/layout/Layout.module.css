@@ -1,4 +1,12 @@
-.container {
+.layout {
   display: flex;
   flex-direction: column;
+}
+
+.layout--light {
+  background-color: var(--color-light-layout-bg);
+}
+
+.layout--dark {
+  background-color: var(--color-dark-layout-bg);
 }

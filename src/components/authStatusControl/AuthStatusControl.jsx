@@ -9,6 +9,8 @@ import { userMock } from "../../constants/userMock";
 import { useThrottle } from "../../hooks/useThrottle";
 import Button from "../button/Button";
 import styles from "./AuthStatusControl.module.css";
+import classNames from "classnames";
+import { useThemeColorContext } from "../themeColorContextProvider/ThemeColorContextProvider";
 
 const AuthStatusContext = createContext({
   authorizedUserId: null,
@@ -33,8 +35,10 @@ AuthStatusControlCompound.UserName = function UserName() {
     selectAuthorizedUserById(state, authorizedUserId)
   );
 
+  const { themeColor } = useThemeColorContext();
+
   return (
-    <p className={styles.name}>
+    <p className={classNames(styles.name, styles[`name--${themeColor}`])}>
       {authorizedUser ? authorizedUser.name : "Guest"}
     </p>
   );
@@ -71,9 +75,16 @@ AuthStatusControlCompound.AuthButton = function AuthButton() {
 };
 
 const AuthStatusControl = () => {
+  const { themeColor } = useThemeColorContext();
+
   return (
     <AuthStatusControlCompound>
-      <div className={styles.container}>
+      <div
+        className={classNames(
+          styles.container,
+          styles[`container--${themeColor}`]
+        )}
+      >
         <AuthStatusControlCompound.UserName />
         <AuthStatusControlCompound.AuthButton />
       </div>

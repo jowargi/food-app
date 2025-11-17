@@ -1,4 +1,11 @@
 .bar {
   height: 4px;
-  background-color: var(--color-scroll-progress);
+}
+
+.bar--light {
+  background-color: var(--color-light-scroll-progress);
+}
+
+.bar--dark {
+  background-color: var(--color-dark-scroll-progress);
 }

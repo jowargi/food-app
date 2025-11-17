@@ -3,6 +3,7 @@ import styles from "./RestaurantCarouselListItem.module.css";
 import { useNavigate } from "react-router-dom";
 import { useTooltip } from "../../hooks/useTooltip/useTooltip";
 import { HoverIntent } from "../../hoverIntent/HoverIntent";
+import { useThemeColorContext } from "../themeColorContextProvider/ThemeColorContextProvider";
 
 export default function RestaurantCarouselListItem({
   restaurantId,
@@ -16,8 +17,10 @@ export default function RestaurantCarouselListItem({
     [navigate, restaurantId]
   );
 
+  const { themeColor } = useThemeColorContext();
+
   const { addTooltip, removeTooltip, onPointerMove, onPointerCancel } =
-    useTooltip(restaurantName);
+    useTooltip({ content: restaurantName, themeColor });
 
   const itemRef = useRef(null);
 

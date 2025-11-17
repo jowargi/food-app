@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef } from "react";
 import styles from "./useTooltip.module.css";
+import classNames from "classnames";
 
-export const useTooltip = (content) => {
+export const useTooltip = ({ content, themeColor = "light" }) => {
   const tooltipRef = useRef(null);
   const targetRef = useRef(null);
 
@@ -14,7 +15,10 @@ export const useTooltip = (content) => {
       tooltipRef.current = document.createElement("div");
 
       tooltipRef.current.innerHTML = content;
-      tooltipRef.current.className = styles.tooltip;
+      tooltipRef.current.className = classNames(
+        styles.tooltip,
+        styles[`tooltip--${themeColor}`]
+      );
 
       targetRef.current = target;
 
@@ -23,7 +27,7 @@ export const useTooltip = (content) => {
 
       targetRef.current.append(tooltipRef.current);
     },
-    [content]
+    [content, themeColor]
   );
 
   const removeTooltip = useCallback(() => {

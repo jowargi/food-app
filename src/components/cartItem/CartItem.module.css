@@ -1,9 +1,23 @@
 .title {
-  color: var(--color-text-heading);
   font-size: var(--font-size-h3);
 }
 
+.title--light {
+  color: var(--color-light-text-heading);
+}
+
+.title--dark {
+  color: var(--color-dark-text-heading);
+}
+
 .text {
-  color: var(--color-text-p);
   font-size: var(--font-size-p);
+}
+
+.text--light {
+  color: var(--color-light-text-p);
+}
+
+.text--dark {
+  color: var(--color-dark-text-p);
 }

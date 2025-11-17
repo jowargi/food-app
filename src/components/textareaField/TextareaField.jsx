@@ -1,4 +1,6 @@
+import { useThemeColorContext } from "../themeColorContextProvider/ThemeColorContextProvider";
 import styles from "./TextareaField.module.css";
+import classNames from "classnames";
 
 export default function TextareaField({
   id,
@@ -7,9 +9,14 @@ export default function TextareaField({
   onChange,
   labelText,
 }) {
+  const { themeColor } = useThemeColorContext();
+
   return (
     <div className={styles.container}>
-      <label htmlFor={id} className={styles.label}>
+      <label
+        htmlFor={id}
+        className={classNames(styles.label, styles[`label--${themeColor}`])}
+      >
         {labelText}
       </label>
       <textarea
@@ -17,7 +24,10 @@ export default function TextareaField({
         name={name}
         value={value}
         onChange={onChange}
-        className={styles.textarea}
+        className={classNames(
+          styles.textarea,
+          styles[`textarea--${themeColor}`]
+        )}
       />
     </div>
   );

@@ -1,15 +1,32 @@
 .header {
   padding: 1rem;
-  border: 1px solid var(--color-border);
+  border-width: 1px;
+  border-style: solid;
   margin: 1rem;
-  background-color: var(--color-main-bg);
+}
+
+.header--light {
+  border-color: var(--color-light-border);
+  background-color: var(--color-light-main-bg);
+}
+
+.header--dark {
+  border-color: var(--color-dark-border);
+  background-color: var(--color-dark-main-bg);
 }
 
 .title {
   float: left;
-  color: var(--color-text-heading);
   font-size: var(--font-size-h1);
   cursor: pointer;
+}
+
+.title--light {
+  color: var(--color-light-text-heading);
+}
+
+.title--dark {
+  color: var(--color-dark-text-heading);
 }
 
 .container {

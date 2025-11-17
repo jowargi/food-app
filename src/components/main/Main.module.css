@@ -1,7 +1,16 @@
 .main {
-  min-height: 100vh;
   padding: 1rem;
-  border: 1px solid var(--color-border);
+  border-width: 1px;
+  border-style: solid;
   margin: 0 1rem;
-  background-color: var(--color-main-bg);
+}
+
+.main--light {
+  border-color: var(--color-light-border);
+  background-color: var(--color-light-main-bg);
+}
+
+.main--dark {
+  border-color: var(--color-dark-border);
+  background-color: var(--color-dark-main-bg);
 }

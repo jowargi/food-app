@@ -1,11 +1,19 @@
 import CartItemCounter from "../cartItemCounter/CartItemCounter";
+import { useThemeColorContext } from "../themeColorContextProvider/ThemeColorContextProvider";
 import styles from "./CartItem.module.css";
+import classNames from "classnames";
 
 export default function CartItem({ cartItemId, cartItemQuantity, dishName }) {
+  const { themeColor } = useThemeColorContext();
+
   return (
     <>
-      <h3 className={styles.title}>{dishName}</h3>
-      <p className={styles.text}>Quantity: {cartItemQuantity}</p>
+      <h3 className={classNames(styles.title, styles[`title--${themeColor}`])}>
+        {dishName}
+      </h3>
+      <p className={classNames(styles.text, styles[`text--${themeColor}`])}>
+        Quantity: {cartItemQuantity}
+      </p>
       <CartItemCounter cartItemId={cartItemId} />
     </>
   );
