@@ -1,0 +1,44 @@
+.container {
+  padding: 1rem;
+  border-width: 1px;
+  border-style: solid;
+  margin: 1rem;
+}
+
+.container--light {
+  border-color: var(--color-light-border);
+  background-color: var(--color-light-section-bg);
+}
+
+.container--dark {
+  border-color: var(--color-dark-border);
+  background-color: var(--color-dark-section-bg);
+}
+
+.container > :not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-size: var(--font-size-h2);
+}
+
+.name--light {
+  color: var(--color-light-text-heading);
+}
+
+.name--dark {
+  color: var(--color-dark-text-heading);
+}
+
+.message {
+  font-size: var(--font-size-p);
+}
+
+.message--light {
+  color: var(--color-light-text-p);
+}
+
+.message--dark {
+  color: var(--color-dark-text-p);
+}

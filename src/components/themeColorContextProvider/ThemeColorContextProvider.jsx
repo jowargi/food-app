@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useState } from "react";
 
 const ThemeColorContext = createContext({
-  themeColor: null,
+  themeColor: "light",
   setLightTheme: () => null,
   setDarkTheme: () => null,
 });
