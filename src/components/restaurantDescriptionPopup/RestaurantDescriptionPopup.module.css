@@ -2,10 +2,21 @@
   position: absolute;
   z-index: 1000;
   padding: 0.5rem;
-  border: 1px solid var(--color-popup-border);
+  border-width: 1px;
+  border-style: solid;
   border-radius: 5px;
-  background-color: var(--color-popup-bg);
-  color: var(--color-popup-text);
   text-align: center;
   font-size: var(--font-size-popup);
+}
+
+.popup--light {
+  border-color: var(--color-light-popup-border);
+  background-color: var(--color-light-popup-bg);
+  color: var(--color-light-popup-text);
+}
+
+.popup--dark {
+  border-color: var(--color-dark-popup-border);
+  background-color: var(--color-dark-popup-bg);
+  color: var(--color-dark-popup-text);
 }

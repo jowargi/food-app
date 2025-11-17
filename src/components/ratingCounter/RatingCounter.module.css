@@ -7,6 +7,13 @@
 
 .text {
   margin-bottom: 0.5rem;
-  color: var(--color-text-p);
   font-size: var(--font-size-p);
+}
+
+.text--light {
+  color: var(--color-light-text-p);
+}
+
+.text--dark {
+  color: var(--color-dark-text-p);
 }

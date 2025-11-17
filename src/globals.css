@@ -1,25 +1,79 @@
 :root {
-  /* Цвета фона */
-  --color-main-bg: #f5f7f9;
-  --color-section-bg: #ffffff;
+  /* Светлая тема */
+  --color-light-layout-bg: #edf2f7;
 
-  /* Цвета текста */
-  --color-text-heading: #2d3748;
-  --color-text-p: #4a5568;
+  --color-light-main-bg: #f5f7f9;
 
-  /* Цвета кнопок */
-  --color-button-bg: #edf2f7;
-  --color-button-text: #2d3748;
-  --color-button-border: #cbd5e0;
-  --color-button-disabled-bg: #e2e8f0;
-  --color-button-disabled-text: #a0aec0;
-  --color-button-disabled-border: #e2e8f0;
+  --color-light-section-bg: #ffffff;
 
-  /* Прочие цвета */
-  --color-border: #e2e8f0;
-  --color-spinner: #718096;
-  --color-scroll-progress: #4a5568;
-  --color-star: #a0aec0;
+  --color-light-text-heading: #2d3748;
+
+  --color-light-text-p: #4a5568;
+
+  --color-light-button-bg: #edf2f7;
+  --color-light-button-text: #2d3748;
+  --color-light-button-border: #cbd5e0;
+  --color-light-button-disabled-bg: #e2e8f0;
+  --color-light-button-disabled-text: #a0aec0;
+  --color-light-button-disabled-border: #e2e8f0;
+
+  --color-light-border: #e2e8f0;
+
+  --color-light-spinner: #718096;
+
+  --color-light-scroll-progress: #4a5568;
+
+  --color-light-star: #a0aec0;
+
+  --color-light-tooltip-bg: #edf2f7;
+  --color-light-tooltip-text: #2d3748;
+  --color-light-tooltip-border: #cbd5e0;
+
+  --color-light-popup-bg: #edf2f7;
+  --color-light-popup-text: #2d3748;
+  --color-light-popup-border: #cbd5e0;
+
+  --color-light-textarea-bg: #ffffff;
+  --color-light-textarea-text: #2d3748;
+  --color-light-textarea-border: #cbd5e0;
+
+  /* Темная тема */
+  --color-dark-layout-bg: #0f1419;
+
+  --color-dark-main-bg: #1a202c;
+
+  --color-dark-section-bg: #2d3748;
+
+  --color-dark-text-heading: #f7fafc;
+
+  --color-dark-text-p: #e2e8f0;
+
+  --color-dark-button-bg: #4a5568;
+  --color-dark-button-text: #f7fafc;
+  --color-dark-button-border: #718096;
+  --color-dark-button-disabled-bg: #4a5568;
+  --color-dark-button-disabled-text: #a0aec0;
+  --color-dark-button-disabled-border: #4a5568;
+
+  --color-dark-border: #4a5568;
+
+  --color-dark-spinner: #e2e8f0;
+
+  --color-dark-scroll-progress: #edf2f7;
+
+  --color-dark-star: #ecc94b;
+
+  --color-dark-tooltip-bg: #4a5568;
+  --color-dark-tooltip-text: #f7fafc;
+  --color-dark-tooltip-border: #718096;
+
+  --color-dark-popup-bg: #4a5568;
+  --color-dark-popup-text: #f7fafc;
+  --color-dark-popup-border: #718096;
+
+  --color-dark-textarea-bg: #2d3748;
+  --color-dark-textarea-text: #f7fafc;
+  --color-dark-textarea-border: #4a5568;
 
   /* Размеры шрифтов */
   --font-size-h1: 2rem;
@@ -30,16 +84,6 @@
   --font-size-p: 1rem;
   --font-size-button: 1rem;
   --font-size-star: 1.25rem;
-
-  /* Tooltip */
-  --color-tooltip-bg: #edf2f7;
-  --color-tooltip-text: #2d3748;
-  --color-tooltip-border: #cbd5e0;
   --font-size-tooltip: 0.875rem;
-
-  /* Popup */
-  --color-popup-bg: #edf2f7;
-  --color-popup-text: #2d3748;
-  --color-popup-border: #cbd5e0;
   --font-size-popup: 0.875rem;
 }

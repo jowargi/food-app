@@ -1,12 +1,19 @@
 import { withCartItemsCheck } from "../../hocs/withCartItemsCheck";
 import CartItemContainer from "../cartItem/CartItemContainer";
+import { useThemeColorContext } from "../themeColorContextProvider/ThemeColorContextProvider";
 import styles from "./CartContent.module.css";
+import classNames from "classnames";
 
 const CartItemsList = ({ cartItemIds }) => {
+  const { themeColor } = useThemeColorContext();
+
   return (
-    <ul className={styles.list}>
+    <ul className={classNames(styles.list, styles[`list--${themeColor}`])}>
       {cartItemIds.map((cartItemId) => (
-        <li key={cartItemId} className={styles.item}>
+        <li
+          key={cartItemId}
+          className={classNames(styles.item, styles[`item--${themeColor}`])}
+        >
           <CartItemContainer cartItemId={cartItemId} />
         </li>
       ))}
@@ -15,7 +22,13 @@ const CartItemsList = ({ cartItemIds }) => {
 };
 
 const EmptyCartMessage = () => {
-  return <p className={styles.text}>Your shopping cart is empty!</p>;
+  const { themeColor } = useThemeColorContext();
+
+  return (
+    <p className={classNames(styles.text, styles[`text--${themeColor}`])}>
+      Your shopping cart is empty!
+    </p>
+  );
 };
 
 const CartContent = withCartItemsCheck({

@@ -1,35 +1,77 @@
 .container {
   padding: 1rem;
-  border: 1px solid var(--color-border);
-  background-color: var(--color-section-bg);
+  border-width: 1px;
+  border-style: solid;
+}
+
+.container--light {
+  border-color: var(--color-light-border);
+  background-color: var(--color-light-section-bg);
+}
+
+.container--dark {
+  border-color: var(--color-dark-border);
+  background-color: var(--color-dark-section-bg);
 }
 
 .container > :not(:last-child) {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .title {
-  color: var(--color-text-heading);
   font-size: var(--font-size-h2);
 }
 
+.title--light {
+  color: var(--color-light-text-heading);
+}
+
+.title--dark {
+  color: var(--color-dark-text-heading);
+}
+
 .price {
-  color: var(--color-text-p);
   font-size: var(--font-size-p);
 }
 
+.price--light {
+  color: var(--color-light-text-p);
+}
+
+.price--dark {
+  color: var(--color-dark-text-p);
+}
+
 .ingredients {
-  color: var(--color-text-p);
   font-size: var(--font-size-p);
+}
+
+.ingredients--light {
+  color: var(--color-light-text-p);
+}
+
+.ingredients--dark {
+  color: var(--color-dark-text-p);
 }
 
 .link {
   display: block;
   width: fit-content;
   padding: 0.5rem;
-  border: 1px solid var(--color-button-border);
-  background-color: var(--color-button-bg);
-  color: var(--color-button-text);
+  border-width: 1px;
+  border-style: solid;
   text-decoration: none;
   font-size: var(--font-size-button);
+}
+
+.link--light {
+  border-color: var(--color-light-button-border);
+  background-color: var(--color-light-button-bg);
+  color: var(--color-light-button-text);
+}
+
+.link--dark {
+  border-color: var(--color-dark-button-border);
+  background-color: var(--color-dark-button-bg);
+  color: var(--color-dark-button-text);
 }

@@ -6,8 +6,15 @@
 
 .label {
   margin-bottom: 0.5rem;
-  color: var(--color-text-p);
   font-size: var(--font-size-p);
+}
+
+.label--light {
+  color: var(--color-light-text-p);
+}
+
+.label--dark {
+  color: var(--color-dark-text-p);
 }
 
 .textarea {
@@ -15,5 +22,19 @@
   width: 40%;
   height: 5rem;
   padding: 0.5rem;
+  border-width: 1px;
+  border-style: solid;
   outline: none;
+}
+
+.textarea--light {
+  border-color: var(--color-light-textarea-border);
+  background-color: var(--color-light-textarea-bg);
+  color: var(--color-light-textarea-text);
+}
+
+.textarea--dark {
+  border-color: var(--color-dark-textarea-border);
+  background-color: var(--color-dark-textarea-bg);
+  color: var(--color-dark-textarea-text);
 }

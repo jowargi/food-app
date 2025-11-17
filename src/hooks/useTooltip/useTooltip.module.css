@@ -2,12 +2,23 @@
   position: absolute;
   z-index: 1000;
   padding: 0.5rem;
-  border: 1px solid var(--color-tooltip-border);
+  border-width: 1px;
+  border-style: solid;
   border-radius: 5px;
-  background-color: var(--color-tooltip-bg);
-  color: var(--color-tooltip-text);
   white-space: nowrap;
   font-size: var(--font-size-tooltip);
+}
+
+.tooltip--light {
+  border-color: var(--color-light-tooltip-border);
+  background-color: var(--color-light-tooltip-bg);
+  color: var(--color-light-tooltip-text);
+}
+
+.tooltip--dark {
+  border-color: var(--color-dark-tooltip-border);
+  background-color: var(--color-dark-tooltip-bg);
+  color: var(--color-dark-tooltip-text);
 }
 
 .target {
