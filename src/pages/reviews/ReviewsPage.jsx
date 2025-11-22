@@ -5,6 +5,7 @@ import ReviewsContainer from "../../components/reviews/ReviewsContainer";
 import styles from "./ReviewsPage.module.css";
 import classNames from "classnames";
 import { useThemeColorContext } from "../../components/themeColorContextProvider/ThemeColorContextProvider";
+import ReviewsPageSkeleton from "../../skeletons/reviewsPage/ReviewsPageSkeleton";
 
 export default function ReviewsPage() {
   const { restaurantId } = useParams();
@@ -14,7 +15,7 @@ export default function ReviewsPage() {
 
   const { themeColor } = useThemeColorContext();
 
-  if (isLoading || isFetching) return <p>Loading...</p>;
+  if (isLoading || isFetching) return <ReviewsPageSkeleton />;
 
   if (isError)
     return <ErrorFallback name={error.status} message={error.error} />;

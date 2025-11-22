@@ -37,6 +37,9 @@
   --color-light-textarea-text: #2d3748;
   --color-light-textarea-border: #cbd5e0;
 
+  --color-light-skeleton-bg: #e2e8f0;
+  --color-light-skeleton-inner-bg: #cbd5e0;
+
   /* Темная тема */
   --color-dark-layout-bg: #0f1419;
 
@@ -74,6 +77,9 @@
   --color-dark-textarea-bg: #2d3748;
   --color-dark-textarea-text: #f7fafc;
   --color-dark-textarea-border: #4a5568;
+
+  --color-dark-skeleton-bg: #4a5568;
+  --color-dark-skeleton-inner-bg: #718096;
 
   /* Размеры шрифтов */
   --font-size-h1: 2rem;

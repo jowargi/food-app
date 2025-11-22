@@ -5,6 +5,7 @@ import DishesContainer from "../../components/dishes/DishesContainer";
 import styles from "./MenuPage.module.css";
 import classNames from "classnames";
 import { useThemeColorContext } from "../../components/themeColorContextProvider/ThemeColorContextProvider";
+import MenuPageSkeleton from "../../skeletons/menuPage/MenuPageSkeleton";
 
 export default function MenuPage() {
   const { restaurantId } = useParams();
@@ -14,7 +15,7 @@ export default function MenuPage() {
 
   const { themeColor } = useThemeColorContext();
 
-  if (isLoading || isFetching) return <p>Loading...</p>;
+  if (isLoading || isFetching) return <MenuPageSkeleton />;
 
   if (isError)
     return <ErrorFallback name={error.status} message={error.error} />;
