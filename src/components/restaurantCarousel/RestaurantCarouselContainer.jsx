@@ -13,6 +13,7 @@ import {
 } from "../../redux/constants/requestStatuses";
 import ErrorFallback from "../errorFallback/ErrorFallback";
 import RestaurantCarousel from "./RestaurantCarousel";
+import RestaurantCarouselSkeleton from "../../skeletons/restaurantCarousel/RestaurantCarouselSkeleton";
 
 export default function RestaurantCarouselContainer() {
   const { data: restaurantIds } = useGetRestaurantsQuery(undefined, {
@@ -33,7 +34,7 @@ export default function RestaurantCarouselContainer() {
   if (requestStatus === REQUEST_STATUS_IDLE) return null;
 
   if (requestStatus === REQUEST_STATUS_PENDING)
-    return <p style={{ marginBottom: "1rem" }}>Loading...</p>;
+    return <RestaurantCarouselSkeleton />;
 
   if (
     requestStatus === REQUEST_STATUS_REJECTED &&

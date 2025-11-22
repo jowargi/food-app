@@ -1,0 +1,31 @@
+.list {
+  overflow-x: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.list--light {
+  background-color: var(--color-light-skeleton-bg);
+}
+
+.list--dark {
+  background-color: var(--color-dark-skeleton-bg);
+}
+
+.item {
+  flex-shrink: 0;
+  width: 550px;
+  height: 20rem;
+  border-radius: 5px;
+}
+
+.item--light {
+  background-color: var(--color-light-skeleton-inner-bg);
+}
+
+.item--dark {
+  background-color: var(--color-dark-skeleton-inner-bg);
+}

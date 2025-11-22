@@ -1,4 +1,5 @@
 import { useGetRestaurantByIdQuery } from "../../redux/api/restaurants/api";
+import RestaurantSkeleton from "../../skeletons/restaurant/RestaurantSkeleton";
 import ErrorFallback from "../errorFallback/ErrorFallback";
 import Restaurant from "./Restaurant";
 
@@ -10,7 +11,7 @@ export default function RestaurantContainer({ restaurantId }) {
     isError,
   } = useGetRestaurantByIdQuery(restaurantId);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <RestaurantSkeleton />;
 
   if (isError)
     return <ErrorFallback name={error.status} message={error.error} />;

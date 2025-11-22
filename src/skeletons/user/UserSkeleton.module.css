@@ -1,0 +1,13 @@
+.title {
+  width: 70px;
+  height: 24px;
+  margin-bottom: 0.5rem;
+}
+
+.title--light {
+  background-color: var(--color-light-skeleton-bg);
+}
+
+.title--dark {
+  background-color: var(--color-dark-skeleton-bg);
+}

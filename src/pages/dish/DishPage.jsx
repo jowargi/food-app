@@ -2,13 +2,14 @@ import { useParams } from "react-router-dom";
 import { useGetDishByIdQuery } from "../../redux/api/dishes/api";
 import ErrorFallback from "../../components/errorFallback/ErrorFallback";
 import DishContainer from "../../components/dish/DishContainer";
+import DishSkeleton from "../../skeletons/dish/DishSkeleton";
 
 export default function DishPage() {
   const { dishId } = useParams();
 
   const { error, isLoading, isFetching, isError } = useGetDishByIdQuery(dishId);
 
-  if (isLoading || isFetching) return <p>Loading...</p>;
+  if (isLoading || isFetching) return <DishSkeleton />;
 
   if (isError)
     return <ErrorFallback name={error.status} message={error.error} />;

@@ -1,0 +1,38 @@
+.container {
+  padding: 1rem;
+}
+
+.container--light {
+  background-color: var(--color-light-skeleton-bg);
+}
+
+.container--dark {
+  background-color: var(--color-dark-skeleton-bg);
+}
+
+.title {
+  width: 150px;
+  height: 33px;
+  margin-bottom: 1rem;
+}
+
+.title--light {
+  background-color: var(--color-light-skeleton-inner-bg);
+}
+
+.title--dark {
+  background-color: var(--color-dark-skeleton-inner-bg);
+}
+
+.list {
+  width: auto;
+  height: 74px;
+}
+
+.list--light {
+  background-color: var(--color-light-skeleton-inner-bg);
+}
+
+.list--dark {
+  background-color: var(--color-dark-skeleton-inner-bg);
+}
