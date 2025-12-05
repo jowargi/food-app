@@ -18,6 +18,8 @@ export const useScrollProgress = () => {
   useEffect(() => {
     let onProgress = () => setScrollProgress(getScrollProgress());
 
+    onProgress();
+
     onProgress = throttle(onProgress, 50);
 
     window.addEventListener("scroll", onProgress);
