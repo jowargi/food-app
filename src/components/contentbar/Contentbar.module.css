@@ -1,0 +1,36 @@
+.aside {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.aside--light {
+  border-color: var(--color-light-border);
+  background-color: var(--color-light-section-bg);
+}
+
+.aside--dark {
+  border-color: var(--color-dark-border);
+  background-color: var(--color-dark-section-bg);
+}
+
+.container {
+  overflow-x: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.container--light {
+  border-color: var(--color-light-border);
+  background-color: var(--color-light-section-bg);
+}
+
+.container--dark {
+  border-color: var(--color-dark-border);
+  background-color: var(--color-dark-section-bg);
+}
