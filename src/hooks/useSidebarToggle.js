@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useSidebarContext } from "../components/layout/Layout";
+import { useSidebarContext } from "../components/sidebarContextProvider/SidebarContextProvider";
 
 export const useSidebarToggle = () => {
   const [isSidebarToggleVisible, setIsSidebarToggleVisible] = useState(true);
@@ -8,7 +8,7 @@ export const useSidebarToggle = () => {
 
   isSidebarToggleVisibleRef.current = isSidebarToggleVisible;
 
-  const { isSidebarVisible, setIsSidebarVisible } = useSidebarContext();
+  const { isSidebarVisible, hideSidebar } = useSidebarContext();
 
   const isSidebarVisibleRef = useRef(null);
 
@@ -23,7 +23,7 @@ export const useSidebarToggle = () => {
       if (windowWidth < 1024 && isSidebarToggleVisible) {
         setIsSidebarToggleVisible(false);
 
-        if (isSidebarVisible) setIsSidebarVisible(false);
+        if (isSidebarVisible) hideSidebar();
       } else if (windowWidth >= 1024 && !isSidebarToggleVisible) {
         setIsSidebarToggleVisible(true);
       }
@@ -36,7 +36,7 @@ export const useSidebarToggle = () => {
     return () => {
       window.removeEventListener("resize", onResize);
     };
-  }, [setIsSidebarVisible]);
+  }, [hideSidebar]);
 
   return isSidebarToggleVisible;
 };

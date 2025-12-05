@@ -11,6 +11,7 @@ import MenuPage from "../../pages/menu/MenuPage";
 import ReviewsPage from "../../pages/reviews/ReviewsPage";
 import DishPageRedirect from "../../redirects/DishPageRedirect";
 import DishPage from "../../pages/dish/DishPage";
+import SidebarContextProvider from "../sidebarContextProvider/SidebarContextProvider";
 
 export default function App() {
   return (
@@ -18,34 +19,36 @@ export default function App() {
       <Provider store={store}>
         <ThemeColorContextProvider>
           <AuthorizedUserIdContextProvider>
-            <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Layout />}>
-                  <Route
-                    index
-                    element={<Navigate to="restaurants" replace />}
-                  />
-                  <Route
-                    path="restaurants"
-                    element={<RestaurantsPageRedirect />}
-                  >
-                    <Route path=":restaurantId" element={<RestaurantsPage />}>
-                      <Route index element={<Navigate to="menu" replace />} />
-                      <Route path="menu" element={<MenuPage />} />
-                      <Route path="reviews" element={<ReviewsPage />} />
-                      <Route
-                        path="*"
-                        element={<Navigate to="menu" replace />}
-                      />
+            <SidebarContextProvider>
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/" element={<Layout />}>
+                    <Route
+                      index
+                      element={<Navigate to="restaurants" replace />}
+                    />
+                    <Route
+                      path="restaurants"
+                      element={<RestaurantsPageRedirect />}
+                    >
+                      <Route path=":restaurantId" element={<RestaurantsPage />}>
+                        <Route index element={<Navigate to="menu" replace />} />
+                        <Route path="menu" element={<MenuPage />} />
+                        <Route path="reviews" element={<ReviewsPage />} />
+                        <Route
+                          path="*"
+                          element={<Navigate to="menu" replace />}
+                        />
+                      </Route>
                     </Route>
+                    <Route path="dish" element={<DishPageRedirect />}>
+                      <Route path=":dishId" element={<DishPage />} />
+                    </Route>
+                    <Route path="*" element={<Navigate to="/" replace />} />
                   </Route>
-                  <Route path="dish" element={<DishPageRedirect />}>
-                    <Route path=":dishId" element={<DishPage />} />
-                  </Route>
-                  <Route path="*" element={<Navigate to="/" replace />} />
-                </Route>
-              </Routes>
-            </BrowserRouter>
+                </Routes>
+              </BrowserRouter>
+            </SidebarContextProvider>
           </AuthorizedUserIdContextProvider>
         </ThemeColorContextProvider>
       </Provider>

@@ -1,14 +1,14 @@
 import { useSidebarToggle } from "../../hooks/useSidebarToggle";
 import { useThrottle } from "../../hooks/useThrottle";
 import Button from "../button/Button";
-import { useSidebarContext } from "../layout/Layout";
+import { useSidebarContext } from "../sidebarContextProvider/SidebarContextProvider";
 
 export default function SidebarToggle() {
-  const { isSidebarVisible, setIsSidebarVisible } = useSidebarContext();
+  const { isSidebarVisible, showSidebar, hideSidebar } = useSidebarContext();
 
   const isSidebarToggleVisible = useSidebarToggle();
 
-  let toggleSidebar = () => setIsSidebarVisible(!isSidebarVisible);
+  let toggleSidebar = () => (isSidebarVisible ? hideSidebar() : showSidebar());
 
   toggleSidebar = useThrottle(toggleSidebar, 300);
 

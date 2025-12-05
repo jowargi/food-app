@@ -1,6 +1,6 @@
 import CartToggle from "../cartToggle/CartToggle";
-import { useSidebarContext } from "../layout/Layout";
 import RouterLink from "../routerLink/RouterLink";
+import { useSidebarContext } from "../sidebarContextProvider/SidebarContextProvider";
 import { useThemeColorContext } from "../themeColorContextProvider/ThemeColorContextProvider";
 import styles from "./Sidebar.module.css";
 import classNames from "classnames";

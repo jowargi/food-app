@@ -1,4 +1,3 @@
-import { createContext, useContext, useState } from "react";
 import Footer from "../footer/Footer";
 import Header from "../header/Header";
 import Main from "../main/Main";
@@ -11,50 +10,42 @@ import CartModal from "../cartModal/CartModal";
 import CartContainer from "../cart/CartContainer";
 import classNames from "classnames";
 import { useThemeColorContext } from "../themeColorContextProvider/ThemeColorContextProvider";
-
-const SidebarContext = createContext({
-  isSidebarVisible: null,
-  setIsSidebarVisible: () => null,
-});
-
-export const useSidebarContext = () => useContext(SidebarContext);
+import { useSidebarContext } from "../sidebarContextProvider/SidebarContextProvider";
 
 export default function Layout() {
-  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  const { isSidebarVisible } = useSidebarContext();
 
   const { themeColor } = useThemeColorContext();
 
   return (
-    <SidebarContext.Provider value={{ isSidebarVisible, setIsSidebarVisible }}>
-      <CartModalContextProvider>
-        <LayoutComponentModal
-          style={{ position: "fixed", left: 0, top: 0, zIndex: 2000 }}
-        >
-          <ScrollProgressBar />
-        </LayoutComponentModal>
-        <LayoutComponentModal
-          style={{
-            position: "fixed",
-            left: 0,
-            top: 0,
-            bottom: 0,
-            zIndex: 1000,
-          }}
-        >
-          <Sidebar />
-        </LayoutComponentModal>
-        <CartModal>
-          <CartContainer />
-        </CartModal>
-        <div
-          className={classNames(styles.layout, styles[`layout--${themeColor}`])}
-          style={{ marginLeft: isSidebarVisible ? "20vw" : 0 }}
-        >
-          <Header />
-          <Main />
-          <Footer />
-        </div>
-      </CartModalContextProvider>
-    </SidebarContext.Provider>
+    <CartModalContextProvider>
+      <LayoutComponentModal
+        style={{ position: "fixed", left: 0, top: 0, zIndex: 2000 }}
+      >
+        <ScrollProgressBar />
+      </LayoutComponentModal>
+      <LayoutComponentModal
+        style={{
+          position: "fixed",
+          left: 0,
+          top: 0,
+          bottom: 0,
+          zIndex: 1000,
+        }}
+      >
+        <Sidebar />
+      </LayoutComponentModal>
+      <CartModal>
+        <CartContainer />
+      </CartModal>
+      <div
+        className={classNames(styles.layout, styles[`layout--${themeColor}`])}
+        style={{ marginLeft: isSidebarVisible ? "20vw" : 0 }}
+      >
+        <Header />
+        <Main />
+        <Footer />
+      </div>
+    </CartModalContextProvider>
   );
 }
