@@ -52,3 +52,12 @@
   background-color: var(--color-dark-button-bg);
   color: var(--color-dark-button-text);
 }
+
+@media not (min-width: 768px) {
+  .item {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

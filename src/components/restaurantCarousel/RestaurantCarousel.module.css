@@ -16,3 +16,13 @@
 .list--dark {
   border-color: var(--color-dark-border);
 }
+
+@media not (min-width: 768px) {
+  .list {
+    overflow-x: visible;
+    overflow-y: auto;
+    flex-direction: column;
+    width: auto;
+    height: 25rem;
+  }
+}

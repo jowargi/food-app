@@ -28,3 +28,12 @@
 .rating--dark {
   color: var(--color-dark-star);
 }
+
+@media not (min-width: 768px) {
+  .container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

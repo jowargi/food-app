@@ -1,7 +1,7 @@
 .list {
+  overflow-x: auto;
   display: flex;
   flex-direction: row;
-  overflow-x: auto;
   padding: 1rem;
   border-width: 1px;
   border-style: solid;
@@ -18,4 +18,19 @@
 
 .item:not(:last-child) {
   margin-right: 1%;
+}
+
+@media not (min-width: 768px) {
+  .list {
+    overflow-x: visible;
+    overflow-y: auto;
+    flex-direction: column;
+    width: auto;
+    height: 10rem;
+  }
+
+  .item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 1%;
+  }
 }

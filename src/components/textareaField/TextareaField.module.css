@@ -19,8 +19,8 @@
 
 .textarea {
   resize: none;
-  width: 40%;
-  height: 5rem;
+  width: 60%;
+  height: 10rem;
   padding: 0.5rem;
   border-width: 1px;
   border-style: solid;
@@ -37,4 +37,10 @@
   border-color: var(--color-dark-textarea-border);
   background-color: var(--color-dark-textarea-bg);
   color: var(--color-dark-textarea-text);
+}
+
+@media not (min-width: 768px) {
+  .textarea {
+    width: 100%;
+  }
 }
