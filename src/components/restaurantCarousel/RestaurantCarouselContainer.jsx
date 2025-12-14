@@ -14,8 +14,9 @@ import {
 import ErrorFallback from "../errorFallback/ErrorFallback";
 import RestaurantCarousel from "./RestaurantCarousel";
 import RestaurantCarouselSkeleton from "../../skeletons/restaurantCarousel/RestaurantCarouselSkeleton";
+import { withResponsiveVisibility } from "../../hocs/withResponsiveVisibility";
 
-export default function RestaurantCarouselContainer() {
+const DesktopRestaurantCarouselContainer = () => {
   const { data: restaurantIds } = useGetRestaurantsQuery(undefined, {
     selectFromResult: (result) => ({
       ...result,
@@ -54,4 +55,11 @@ export default function RestaurantCarouselContainer() {
   if (!restaurantsWithImage.length) return null;
 
   return <RestaurantCarousel restaurantsWithImage={restaurantsWithImage} />;
-}
+};
+
+const RestaurantCarouselContainer = withResponsiveVisibility({
+  DesktopComponent: DesktopRestaurantCarouselContainer,
+  breakpointWidth: 768,
+});
+
+export default RestaurantCarouselContainer;

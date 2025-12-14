@@ -5,8 +5,10 @@ import SidebarToggle from "../sidebarToggle/SidebarToggle";
 import ThemeColorToggle from "../themeColorToggle/ThemeColorToggle";
 import styles from "./Header.module.css";
 import classNames from "classnames";
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import { useThemeColorContext } from "../themeColorContextProvider/ThemeColorContextProvider";
+import { withResponsiveVisibility } from "../../hocs/withResponsiveVisibility";
+import { useSidebarContext } from "../sidebarContextProvider/SidebarContextProvider";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -15,6 +17,17 @@ export default function Header() {
   const onClick = useCallback(() => navigate("/"), [navigate]);
 
   const { themeColor } = useThemeColorContext();
+
+  const { isSidebarVisible, showSidebar, hideSidebar } = useSidebarContext();
+
+  const ResponsiveSidebarToggle = useMemo(() => {
+    return withResponsiveVisibility({
+      DesktopComponent: SidebarToggle,
+      breakpointWidth: 1024,
+      desktopEffects: [() => !isSidebarVisible && showSidebar()],
+      mobileEffects: [() => isSidebarVisible && hideSidebar()],
+    });
+  }, [isSidebarVisible, showSidebar, hideSidebar]);
 
   return (
     <header
@@ -35,7 +48,7 @@ export default function Header() {
         <CartToggle />
         <AuthStatusControl />
         <ThemeColorToggle />
-        <SidebarToggle />
+        <ResponsiveSidebarToggle />
       </div>
     </header>
   );
