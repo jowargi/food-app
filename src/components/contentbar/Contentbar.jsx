@@ -1,4 +1,4 @@
-import { useContentbar } from "../../hooks/useContentbar";
+import { withResponsiveVisibility } from "../../hocs/withResponsiveVisibility";
 import CartToggle from "../cartToggle/CartToggle";
 import RouterLink from "../routerLink/RouterLink";
 import { useSidebarContext } from "../sidebarContextProvider/SidebarContextProvider";
@@ -6,13 +6,11 @@ import { useThemeColorContext } from "../themeColorContextProvider/ThemeColorCon
 import styles from "./Contentbar.module.css";
 import classNames from "classnames";
 
-export default function Contentbar() {
-  const isContentbarVisible = useContentbar();
-
+const MobileContentbar = () => {
   const { isSidebarVisible } = useSidebarContext();
   const { themeColor } = useThemeColorContext();
 
-  return isContentbarVisible && !isSidebarVisible ? (
+  return !isSidebarVisible ? (
     <aside className={classNames(styles.aside, styles[`aside--${themeColor}`])}>
       <div
         className={classNames(
@@ -25,4 +23,11 @@ export default function Contentbar() {
       </div>
     </aside>
   ) : null;
-}
+};
+
+const Contentbar = withResponsiveVisibility({
+  MobileComponent: MobileContentbar,
+  breakpointWidth: 1024,
+});
+
+export default Contentbar;

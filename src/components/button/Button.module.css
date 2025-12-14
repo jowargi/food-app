@@ -2,6 +2,7 @@
   padding: 0.5rem;
   border-width: 1px;
   border-style: solid;
+  white-space: nowrap;
   font-size: var(--font-size-button);
   line-height: 1;
 }
