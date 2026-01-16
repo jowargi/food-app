@@ -34,7 +34,7 @@ export default function Header() {
       className={classNames(
         styles.header,
         "clearfix",
-        styles[`header--${themeColor}`]
+        styles[`header--${themeColor}`],
       )}
     >
       <h1

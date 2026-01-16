@@ -48,7 +48,7 @@ export const selectUserCartItemIds = createSelector(
     const userCart = state.byUserId[userId];
 
     return userCart ? Object.keys(userCart) : [];
-  }
+  },
 );
 
 export const { selectUserCartItemQuantity } = cartSlice.selectors;

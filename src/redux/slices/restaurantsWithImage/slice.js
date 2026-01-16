@@ -23,7 +23,7 @@ export const restaurantsWithImageSlice = createSlice({
         getRestaurantsWithImage.rejected,
         (state, { payload, error }) => {
           state.error = payload || error;
-        }
+        },
       );
   },
 
@@ -38,7 +38,7 @@ export const {
   selectById: selectRestaurantWithImageById,
   selectTotal: selectRestaurantsWithImageTotal,
 } = restaurantsWithImageAdapter.getSelectors(
-  (globalState) => globalState[restaurantsWithImageSlice.name]
+  (globalState) => globalState[restaurantsWithImageSlice.name],
 );
 
 export const { selectRestaurantsWithImageError } =

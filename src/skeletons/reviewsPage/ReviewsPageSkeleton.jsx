@@ -9,7 +9,7 @@ export default function ReviewsPageSkeleton() {
     <div
       className={classNames(
         styles.container,
-        styles[`container--${themeColor}`]
+        styles[`container--${themeColor}`],
       )}
     >
       <h4

@@ -17,7 +17,7 @@ export const useTooltip = ({ content, themeColor = "light" }) => {
       tooltipRef.current.innerHTML = content;
       tooltipRef.current.className = classNames(
         styles.tooltip,
-        styles[`tooltip--${themeColor}`]
+        styles[`tooltip--${themeColor}`],
       );
 
       targetRef.current = target;
@@ -27,7 +27,7 @@ export const useTooltip = ({ content, themeColor = "light" }) => {
 
       targetRef.current.append(tooltipRef.current);
     },
-    [content, themeColor]
+    [content, themeColor],
   );
 
   const removeTooltip = useCallback(() => {
@@ -45,40 +45,16 @@ export const useTooltip = ({ content, themeColor = "light" }) => {
     targetRef.current = null;
   }, []);
 
-  const onPointerMove = useCallback((event) => {
-    event.stopPropagation();
-
-    if (!tooltipRef.current) return;
-
-    const target = event.currentTarget;
-    const targetRect = target.getBoundingClientRect();
-    const tooltipLeft = event.clientX - targetRect.left - target.clientLeft;
-    const tooltipTop = event.clientY - targetRect.top - target.clientTop;
-
-    tooltipRef.current.style.left = tooltipLeft + 10 + "px";
-    tooltipRef.current.style.top = tooltipTop + 10 + "px";
-  }, []);
-
-  const onPointerCancel = useCallback(
-    (event) => {
-      event.stopPropagation();
-
-      removeTooltip();
-    },
-    [removeTooltip]
-  );
-
   useEffect(
     () => () => {
       removeTooltip();
     },
-    [removeTooltip]
+    [removeTooltip],
   );
 
   return {
+    tooltipRef,
     addTooltip,
     removeTooltip,
-    onPointerMove,
-    onPointerCancel,
   };
 };

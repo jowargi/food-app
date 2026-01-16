@@ -12,7 +12,7 @@ export default function Restaurant({ restaurantName }) {
     <div
       className={classNames(
         styles.container,
-        styles[`container--${themeColor}`]
+        styles[`container--${themeColor}`],
       )}
     >
       <h3 className={classNames(styles.title, styles[`title--${themeColor}`])}>

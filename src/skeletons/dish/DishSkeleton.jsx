@@ -9,7 +9,7 @@ export default function DishSkeleton() {
     <section
       className={classNames(
         styles.container,
-        styles[`container--${themeColor}`]
+        styles[`container--${themeColor}`],
       )}
     >
       <h2
@@ -19,7 +19,7 @@ export default function DishSkeleton() {
       <p
         className={classNames(
           styles.ingredients,
-          styles[`ingredients--${themeColor}`]
+          styles[`ingredients--${themeColor}`],
         )}
       />
       <a className={classNames(styles.link, styles[`link--${themeColor}`])} />

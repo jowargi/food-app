@@ -10,7 +10,7 @@ export default function Counter({ count, increment, decrement }) {
     <div
       className={classNames(
         styles.container,
-        styles[`container--${themeColor}`]
+        styles[`container--${themeColor}`],
       )}
     >
       <Button onClick={decrement}>-</Button>

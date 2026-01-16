@@ -26,7 +26,7 @@ export default function TextareaField({
         onChange={onChange}
         className={classNames(
           styles.textarea,
-          styles[`textarea--${themeColor}`]
+          styles[`textarea--${themeColor}`],
         )}
       />
     </div>

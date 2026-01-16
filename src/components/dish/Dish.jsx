@@ -11,7 +11,7 @@ export default function Dish({ dishName, dishPrice, dishIngredients }) {
     <section
       className={classNames(
         styles.container,
-        styles[`container--${themeColor}`]
+        styles[`container--${themeColor}`],
       )}
     >
       <h2 className={classNames(styles.title, styles[`title--${themeColor}`])}>
@@ -23,7 +23,7 @@ export default function Dish({ dishName, dishPrice, dishIngredients }) {
       <p
         className={classNames(
           styles.ingredients,
-          styles[`ingredients--${themeColor}`]
+          styles[`ingredients--${themeColor}`],
         )}
       >
         Ingredients: {dishIngredients.join(", ")}

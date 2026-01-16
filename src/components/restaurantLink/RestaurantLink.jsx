@@ -1,8 +1,7 @@
-import { createContext, useContext, useEffect, useRef } from "react";
-import { usePopup } from "../../hooks/usePopup";
+import { createContext, useContext, useRef } from "react";
 import RouterLink from "../routerLink/RouterLink";
-import { HoverIntent } from "../../hoverIntent/HoverIntent";
 import RestaurantDescriptionPopupContainer from "../restaurantDescriptionPopup/RestaurantDescriptionPopupContainer";
+import { useRestaurantLinkPopup } from "../../hooks/useRestaurantLinkPopup";
 
 const PopupRectContext = createContext({
   popupWidth: null,
@@ -13,26 +12,10 @@ const PopupRectContext = createContext({
 export const usePopupRectContext = () => useContext(PopupRectContext);
 
 export default function RestaurantLink({ restaurantId, restaurantName }) {
-  const { popupRectState, addPopup, removePopup, onPointerCancel, onClick } =
-    usePopup();
-
   const linkRef = useRef(null);
 
-  useEffect(() => {
-    const hoverIntent = new HoverIntent({
-      element: linkRef.current,
-
-      over: function () {
-        addPopup(this);
-      },
-
-      out: () => removePopup(),
-    });
-
-    return () => {
-      hoverIntent.destroy();
-    };
-  }, [addPopup, removePopup]);
+  const { popupRectState, onPointerCancel, onClick } =
+    useRestaurantLinkPopup(linkRef);
 
   return (
     <>

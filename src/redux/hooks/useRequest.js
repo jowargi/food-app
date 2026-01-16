@@ -8,7 +8,7 @@ export const useRequest = ({ thunk, payload, abortAfterMs }) => {
   const dispatch = useDispatch();
 
   const requestStatus = useSelector((state) =>
-    selectStatus(state, request?.requestId)
+    selectStatus(state, request?.requestId),
   );
 
   useEffect(() => {

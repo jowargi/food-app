@@ -24,7 +24,7 @@ export default function ReviewsPage() {
     <div
       className={classNames(
         styles.container,
-        styles[`container--${themeColor}`]
+        styles[`container--${themeColor}`],
       )}
     >
       <h4 className={classNames(styles.title, styles[`title--${themeColor}`])}>

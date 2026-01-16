@@ -9,7 +9,7 @@ export default function RestaurantSkeleton() {
     <div
       className={classNames(
         styles.container,
-        styles[`container--${themeColor}`]
+        styles[`container--${themeColor}`],
       )}
     >
       <h3

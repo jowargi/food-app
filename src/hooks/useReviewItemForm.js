@@ -38,13 +38,13 @@ export const useReviewItemForm = (restaurantId, reviewId) => {
 
   const [formState, dispatch] = useReducer(
     reducer,
-    INITIAL_FORM_STATE_REF.current
+    INITIAL_FORM_STATE_REF.current,
   );
 
   const { authorizedUserId } = useAuthorizedUserIdContext();
 
   const authorizedUser = useSelector((state) =>
-    selectAuthorizedUserById(state, authorizedUserId)
+    selectAuthorizedUserById(state, authorizedUserId),
   );
 
   const safeDispatch = useCallback(
@@ -53,27 +53,27 @@ export const useReviewItemForm = (restaurantId, reviewId) => {
 
       dispatch(action);
     },
-    [authorizedUser]
+    [authorizedUser],
   );
 
   const setText = useCallback(
     (text) => safeDispatch({ type: SET_TEXT_ACTION, payload: text }),
-    [safeDispatch]
+    [safeDispatch],
   );
 
   const incrementRating = useCallback(
     () => safeDispatch({ type: INCREMENT_RATING_ACTION }),
-    [safeDispatch]
+    [safeDispatch],
   );
 
   const decrementRating = useCallback(
     () => safeDispatch({ type: DECREMENT_RATING_ACTION }),
-    [safeDispatch]
+    [safeDispatch],
   );
 
   const clear = useCallback(
     () => safeDispatch({ type: CLEAR_ACTION }),
-    [safeDispatch]
+    [safeDispatch],
   );
 
   return { formState, setText, incrementRating, decrementRating, clear };

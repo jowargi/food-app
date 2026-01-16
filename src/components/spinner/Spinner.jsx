@@ -10,7 +10,7 @@ export default function Spinner() {
       <div
         className={classNames(
           styles["spinner-inner"],
-          styles[`spinner-inner--theme-color-${themeColor}`]
+          styles[`spinner-inner--theme-color-${themeColor}`],
         )}
       />
     </div>

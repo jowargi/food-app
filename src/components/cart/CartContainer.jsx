@@ -7,7 +7,7 @@ const CartContainerAuthorized = ({ authorizedUser }) => {
   const { id: userId } = authorizedUser;
 
   const cartItemIds = useSelector((state) =>
-    selectUserCartItemIds(state, userId)
+    selectUserCartItemIds(state, userId),
   );
 
   return <Cart cartItemIds={cartItemIds} />;

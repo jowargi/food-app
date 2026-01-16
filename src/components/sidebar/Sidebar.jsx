@@ -17,7 +17,7 @@ export default function Sidebar() {
         <div
           className={classNames(
             styles.container,
-            styles[`container--${themeColor}`]
+            styles[`container--${themeColor}`],
           )}
         >
           <RouterLink to="/restaurants">Restaurants</RouterLink>

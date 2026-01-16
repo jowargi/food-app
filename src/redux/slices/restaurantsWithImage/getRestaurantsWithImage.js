@@ -9,7 +9,7 @@ export const getRestaurantsWithImage = createAsyncThunk(
   async (_, { rejectWithValue, signal }) => {
     const restaurantsResponse = await fetch(
       "http://localhost:3001/api/restaurants/",
-      { signal }
+      { signal },
     );
 
     if (!restaurantsResponse.ok)
@@ -21,18 +21,18 @@ export const getRestaurantsWithImage = createAsyncThunk(
       return rejectWithValue(new APIError("Restaurants not found"));
 
     const imageResponses = await Promise.all(
-      restaurants.map((restaurant) => fetch(restaurant.img, { signal }))
+      restaurants.map((restaurant) => fetch(restaurant.img, { signal })),
     );
 
     const failedImageResponse = imageResponses.find(
-      (imageResponse) => !imageResponse.ok
+      (imageResponse) => !imageResponse.ok,
     );
 
     if (failedImageResponse)
       return rejectWithValue(new HttpError(failedImageResponse.status));
 
     const images = await Promise.all(
-      imageResponses.map((imageResponse) => imageResponse.blob())
+      imageResponses.map((imageResponse) => imageResponse.blob()),
     );
 
     const restaurantsWithImage = restaurants.map((restaurant, index) => ({
@@ -47,5 +47,5 @@ export const getRestaurantsWithImage = createAsyncThunk(
     condition: (_, { getState }) =>
       !selectRestaurantsWithImageTotal(getState()),
     dispatchConditionRejection: true,
-  }
+  },
 );

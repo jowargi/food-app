@@ -10,7 +10,7 @@ export const withAuthorized = ({
     const { authorizedUserId } = useAuthorizedUserIdContext();
 
     const authorizedUser = useSelector((state) =>
-      selectAuthorizedUserById(state, authorizedUserId)
+      selectAuthorizedUserById(state, authorizedUserId),
     );
 
     if (!authorizedUser)
