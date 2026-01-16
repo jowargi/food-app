@@ -22,19 +22,19 @@ export const requestsSlice = createSlice({
         ({ type }) => type.endsWith("/pending"),
         (state, { meta }) => {
           state[meta.requestId] = REQUEST_STATUS_PENDING;
-        }
+        },
       )
       .addMatcher(
         ({ type }) => type.endsWith("/fulfilled"),
         (state, { meta }) => {
           state[meta.requestId] = REQUEST_STATUS_FULFILLED;
-        }
+        },
       )
       .addMatcher(
         ({ type }) => type.endsWith("/rejected"),
         (state, { meta }) => {
           state[meta.requestId] = REQUEST_STATUS_REJECTED;
-        }
+        },
       );
   },
 

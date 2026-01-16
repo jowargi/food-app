@@ -12,7 +12,7 @@ export default function Restaurants({ title = "Restaurants" }) {
     <section
       className={classNames(
         styles.container,
-        styles[`container--${themeColor}`]
+        styles[`container--${themeColor}`],
       )}
     >
       <h2 className={classNames(styles.title, styles[`title--${themeColor}`])}>

@@ -29,6 +29,6 @@ export const store = configureStore({
       restaurantsApi.middleware,
       dishesApi.middleware,
       reviewsApi.middleware,
-      usersApi.middleware
+      usersApi.middleware,
     ),
 });

@@ -19,5 +19,5 @@ export const { addAuthorizedUser } = authorizedUsersSlice.actions;
 
 export const { selectById: selectAuthorizedUserById } =
   authorizedUsersAdapter.getSelectors(
-    (state) => state[authorizedUsersSlice.name]
+    (state) => state[authorizedUsersSlice.name],
   );

@@ -19,7 +19,7 @@ const CartModalAuthorized = ({ children }) => {
       <div className={styles.overlay}>
         <div className={styles.content}>{children}</div>
       </div>,
-      document.getElementById("modal")
+      document.getElementById("modal"),
     )
   );
 };

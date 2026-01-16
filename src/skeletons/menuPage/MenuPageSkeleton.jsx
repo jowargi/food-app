@@ -9,7 +9,7 @@ export default function MenuPageSkeleton() {
     <div
       className={classNames(
         styles.container,
-        styles[`container--${themeColor}`]
+        styles[`container--${themeColor}`],
       )}
     >
       <h4

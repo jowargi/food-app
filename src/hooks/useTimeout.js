@@ -17,7 +17,7 @@ export const useTimeout = () => {
 
       timeoutRef.current = setTimeout(func, ms);
     },
-    [clearTimer]
+    [clearTimer],
   );
 
   return { setTimer, clearTimer };

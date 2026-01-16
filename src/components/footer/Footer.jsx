@@ -12,7 +12,7 @@ export default function Footer() {
       <p
         className={classNames(
           styles.copyright,
-          styles[`copyright--${themeColor}`]
+          styles[`copyright--${themeColor}`],
         )}
       >
         Copyright © 2025 Food App

@@ -35,7 +35,7 @@ export const usePopup = () => {
       setLeft(popupLeft);
       setTop(popupTop);
     },
-    [showPopup, setWidth, setLeft, setTop]
+    [showPopup, setWidth, setLeft, setTop],
   );
 
   const removePopup = useCallback(() => {
@@ -44,18 +44,7 @@ export const usePopup = () => {
     reset();
   }, [reset]);
 
-  const onPointerCancel = useCallback(
-    (event) => {
-      event.stopPropagation();
-
-      removePopup();
-    },
-    [removePopup]
-  );
-
-  const onClick = useCallback(() => removePopup(), [removePopup]);
-
   useEffect(() => () => removePopup(), [removePopup]);
 
-  return { popupRectState, addPopup, removePopup, onPointerCancel, onClick };
+  return { popupRectState, addPopup, removePopup };
 };

@@ -10,17 +10,17 @@ export const useCartActions = ({ userId, dishId }) => {
   const dispatch = useDispatch();
 
   const count = useSelector((state) =>
-    selectUserCartItemQuantity(state, userId, dishId)
+    selectUserCartItemQuantity(state, userId, dishId),
   );
 
   const increment = useCallback(
     () => dispatch(addToCart({ userId, dishId })),
-    [dispatch, userId, dishId]
+    [dispatch, userId, dishId],
   );
 
   const decrement = useCallback(
     () => dispatch(removeFromCart({ userId, dishId })),
-    [dispatch, userId, dishId]
+    [dispatch, userId, dishId],
   );
 
   return { count, increment, decrement };

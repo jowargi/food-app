@@ -32,7 +32,7 @@ AuthStatusControlCompound.UserName = function UserName() {
   const { authorizedUserId } = useContext(AuthStatusContext);
 
   const authorizedUser = useSelector((state) =>
-    selectAuthorizedUserById(state, authorizedUserId)
+    selectAuthorizedUserById(state, authorizedUserId),
   );
 
   const { themeColor } = useThemeColorContext();
@@ -48,7 +48,7 @@ AuthStatusControlCompound.AuthButton = function AuthButton() {
   const { authorizedUserId, login, logout } = useContext(AuthStatusContext);
 
   const authorizedUser = useSelector((state) =>
-    selectAuthorizedUserById(state, authorizedUserId)
+    selectAuthorizedUserById(state, authorizedUserId),
   );
 
   const dispatch = useDispatch();
@@ -82,7 +82,7 @@ const AuthStatusControl = () => {
       <div
         className={classNames(
           styles.container,
-          styles[`container--${themeColor}`]
+          styles[`container--${themeColor}`],
         )}
       >
         <AuthStatusControlCompound.UserName />

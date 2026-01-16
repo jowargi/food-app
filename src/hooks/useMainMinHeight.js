@@ -10,12 +10,12 @@ export const useMainMinHeight = () => {
     const headerHeight = parseFloat(getComputedStyle(header).height);
     const headerMarginTop = parseFloat(getComputedStyle(header).marginTop);
     const headerMarginBottom = parseFloat(
-      getComputedStyle(header).marginBottom
+      getComputedStyle(header).marginBottom,
     );
     const footerHeight = parseFloat(getComputedStyle(footer).height);
     const footerMarginTop = parseFloat(getComputedStyle(footer).marginTop);
     const footerMarginBottom = parseFloat(
-      getComputedStyle(footer).marginBottom
+      getComputedStyle(footer).marginBottom,
     );
 
     const mainMinHeight =

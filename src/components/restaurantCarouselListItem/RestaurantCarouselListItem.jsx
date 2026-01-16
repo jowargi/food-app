@@ -1,9 +1,8 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useRef } from "react";
 import styles from "./RestaurantCarouselListItem.module.css";
 import { useNavigate } from "react-router-dom";
-import { useTooltip } from "../../hooks/useTooltip/useTooltip";
-import { HoverIntent } from "../../hoverIntent/HoverIntent";
 import { useThemeColorContext } from "../themeColorContextProvider/ThemeColorContextProvider";
+import { useRestaurantCarouselListItemTooltip } from "../../hooks/useRestaurantCarouselListItemTooltip";
 
 export default function RestaurantCarouselListItem({
   restaurantId,
@@ -14,48 +13,18 @@ export default function RestaurantCarouselListItem({
 
   const onClick = useCallback(
     () => navigate(`/restaurants/${restaurantId}`),
-    [navigate, restaurantId]
+    [navigate, restaurantId],
   );
 
   const { themeColor } = useThemeColorContext();
 
-  const { addTooltip, removeTooltip, onPointerMove, onPointerCancel } =
-    useTooltip({ content: restaurantName, themeColor });
-
   const itemRef = useRef(null);
 
-  useEffect(() => {
-    const hoverIntent = new HoverIntent({
-      element: itemRef.current,
-
-      over: function (lastPointerMoveEvent) {
-        if (!lastPointerMoveEvent) return;
-
-        addTooltip(this);
-
-        this.addEventListener("pointermove", onPointerMove);
-        this.addEventListener("pointercancel", onPointerCancel);
-
-        this.dispatchEvent(lastPointerMoveEvent);
-      },
-
-      out: function () {
-        removeTooltip();
-
-        this.removeEventListener("pointermove", onPointerMove);
-        this.removeEventListener("pointercancel", onPointerCancel);
-      },
-    });
-
-    const cleanup = function () {
-      hoverIntent.destroy();
-
-      this.removeEventListener("pointermove", onPointerMove);
-      this.removeEventListener("pointercancel", onPointerCancel);
-    };
-
-    return cleanup.bind(itemRef.current);
-  }, [addTooltip, removeTooltip, onPointerMove, onPointerCancel]);
+  useRestaurantCarouselListItemTooltip({
+    elementRef: itemRef,
+    content: restaurantName,
+    themeColor,
+  });
 
   return (
     <li ref={itemRef} onClick={onClick} className={styles.item}>

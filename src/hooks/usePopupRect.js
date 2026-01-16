@@ -54,42 +54,42 @@ const reducer = (popupRectState, { type, payload }) => {
 export const usePopupRect = () => {
   const [popupRectState, dispatch] = useReducer(
     reducer,
-    INITIAL_POPUP_RECT_STATE
+    INITIAL_POPUP_RECT_STATE,
   );
 
   const showPopup = useCallback(
     () => dispatch({ type: SHOW_POPUP_ACTION }),
-    []
+    [],
   );
 
   const hidePopup = useCallback(
     () => dispatch({ type: HIDE_POPUP_ACTION }),
-    []
+    [],
   );
 
   const setWidth = useCallback(
     (width) => dispatch({ type: SET_WIDTH_ACTION, payload: width }),
-    []
+    [],
   );
 
   const setLeft = useCallback(
     (left) => dispatch({ type: SET_LEFT_ACTION, payload: left }),
-    []
+    [],
   );
 
   const setTop = useCallback(
     (top) => dispatch({ type: SET_TOP_ACTION, payload: top }),
-    []
+    [],
   );
 
   const resetWidth = useCallback(
     () => dispatch({ type: RESET_WIDTH_ACTION }),
-    []
+    [],
   );
 
   const resetOffset = useCallback(
     () => dispatch({ type: RESET_OFFSET_ACTION }),
-    []
+    [],
   );
 
   const reset = useCallback(() => dispatch({ type: RESET_ACTION }), []);

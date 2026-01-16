@@ -49,7 +49,7 @@ export const useThrottle = (func, ms) => {
         }
       }, ms);
     },
-    [ms]
+    [ms],
   );
 
   useEffect(() => {

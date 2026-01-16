@@ -29,7 +29,7 @@ const DesktopRestaurantCarouselContainer = () => {
   let restaurantsWithImage = useSelector(selectRestaurantsWithImage);
 
   const restaurantsWithImageError = useSelector(
-    selectRestaurantsWithImageError
+    selectRestaurantsWithImageError,
   );
 
   if (requestStatus === REQUEST_STATUS_IDLE) return null;
@@ -49,7 +49,7 @@ const DesktopRestaurantCarouselContainer = () => {
     );
 
   restaurantsWithImage = restaurantsWithImage.filter((restaurant) =>
-    restaurantIds.includes(restaurant.id)
+    restaurantIds.includes(restaurant.id),
   );
 
   if (!restaurantsWithImage.length) return null;

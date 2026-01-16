@@ -9,7 +9,7 @@ export default function ErrorFallback({ name, message }) {
     <div
       className={classNames(
         styles.container,
-        styles[`container--${themeColor}`]
+        styles[`container--${themeColor}`],
       )}
     >
       <h2 className={classNames(styles.name, styles[`name--${themeColor}`])}>

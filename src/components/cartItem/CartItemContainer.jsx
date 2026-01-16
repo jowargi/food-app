@@ -10,7 +10,7 @@ const CartItemContainerAuthorized = ({ authorizedUser, cartItemId }) => {
   const { id: userId } = authorizedUser;
 
   const cartItemQuantity = useSelector((state) =>
-    selectUserCartItemQuantity(state, userId, cartItemId)
+    selectUserCartItemQuantity(state, userId, cartItemId),
   );
 
   const {

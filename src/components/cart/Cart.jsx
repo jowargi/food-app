@@ -17,7 +17,7 @@ export default function Cart({ cartItemIds }) {
     <section
       className={classNames(
         styles.container,
-        styles[`container--${themeColor}`]
+        styles[`container--${themeColor}`],
       )}
       style={{ position: "relative" }}
     >

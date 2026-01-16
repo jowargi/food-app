@@ -7,13 +7,13 @@ export const useImageURLs = (objectsWithImage) => {
         ...object,
         img: URL.createObjectURL(object.img),
       })),
-    [objectsWithImage]
+    [objectsWithImage],
   );
 
   useEffect(
     () => () =>
       objectsWithImageUrl.forEach((object) => URL.revokeObjectURL(object.img)),
-    [objectsWithImageUrl]
+    [objectsWithImageUrl],
   );
 
   return objectsWithImageUrl;
